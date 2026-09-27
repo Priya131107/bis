@@ -1,0 +1,117 @@
+@import "tailwindcss";
+@import './styles/tokens.css';
+@config "../tailwind.config.cjs";
+
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html {
+    font-family: var(--font-ui);
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body { margin: 0; min-height: 100vh; }
+
+  h1, h2, h3 { font-family: var(--font-heading); line-height: 1.25; }
+
+  :focus-visible {
+    outline: 2px solid var(--color-blue);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+  }
+
+  /* scrollbar */
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: var(--color-offwhite); }
+  ::-webkit-scrollbar-thumb { background: #C5CDD6; border-radius: 3px; }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-md text-white transition-colors duration-150;
+    background-color: var(--color-navy);
+  }
+  .btn-primary:hover { background-color: var(--color-blue); }
+
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-md transition-colors duration-150;
+    border: 1px solid var(--color-border);
+    color: var(--color-text-primary);
+    background-color: var(--color-surface);
+  }
+  .btn-secondary:hover { background-color: var(--color-offwhite); }
+
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 px-3 py-1.5 text-sm font-medium rounded-md transition-colors duration-150;
+    color: var(--color-text-secondary);
+  }
+  .btn-ghost:hover {
+    background-color: rgba(16, 42, 67, 0.06);
+    color: var(--color-text-primary);
+  }
+
+  .card {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+  }
+
+  .tag-demo {
+    @apply inline-flex items-center px-1.5 py-0.5 text-xs font-medium rounded;
+    background-color: rgba(242, 140, 40, 0.12);
+    color: #92580A;
+    border: 1px solid rgba(242, 140, 40, 0.3);
+  }
+
+  .tag-status-active {
+    @apply inline-flex items-center px-2 py-0.5 text-xs font-medium rounded;
+    background-color: rgba(35, 134, 54, 0.1);
+    color: var(--color-success);
+  }
+
+  .tag-status-draft {
+    @apply inline-flex items-center px-2 py-0.5 text-xs font-medium rounded;
+    background-color: rgba(217, 119, 6, 0.1);
+    color: var(--color-warning);
+  }
+
+  .tag-status-withdrawn {
+    @apply inline-flex items-center px-2 py-0.5 text-xs font-medium rounded;
+    background-color: rgba(192, 57, 43, 0.1);
+    color: var(--color-error);
+  }
+
+  .disclaimer {
+    @apply flex gap-2 p-3 text-xs rounded-md;
+    background-color: rgba(23, 105, 170, 0.06);
+    border: 1px solid rgba(23, 105, 170, 0.2);
+    color: var(--color-text-secondary);
+  }
+
+  .skeleton {
+    @apply animate-pulse rounded;
+    background-color: #E4E9EE;
+  }
+
+  .nav-item {
+    @apply flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-md transition-colors duration-150 w-full;
+    color: var(--color-text-secondary);
+  }
+  .nav-item:hover {
+    background-color: rgba(16, 42, 67, 0.06);
+    color: var(--color-text-primary);
+  }
+  .nav-item.active {
+    background-color: rgba(23, 105, 170, 0.1);
+    color: var(--color-blue);
+  }
+}
+
+@layer utilities {
+  .text-primary { color: var(--color-text-primary); }
+  .text-secondary { color: var(--color-text-secondary); }
+  .surface { background-color: var(--color-surface); }
+  .border-subtle { border-color: var(--color-border); }
+}

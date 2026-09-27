@@ -1,0 +1,37 @@
+/* BISense Design Tokens */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Serif+4:wght@400;600&display=swap');
+
+:root {
+  --color-navy: #102A43;
+  --color-blue: #1769AA;
+  --color-saffron: #F28C28;
+  --color-offwhite: #F7F8FA;
+  --color-charcoal: #17202A;
+  --color-success: #238636;
+  --color-warning: #D97706;
+  --color-error: #C0392B;
+
+  --color-background: var(--color-offwhite);
+  --color-surface: #FFFFFF;
+  --color-border: #E1E6EB;
+  --color-text-primary: var(--color-charcoal);
+  --color-text-secondary: #5A6472;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+
+  --shadow-sm: 0 1px 2px rgba(16, 42, 67, 0.06);
+  --shadow-md: 0 4px 12px rgba(16, 42, 67, 0.08);
+
+  --font-ui: 'Inter', 'Manrope', system-ui, sans-serif;
+  --font-heading: 'Source Serif 4', Georgia, serif;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
